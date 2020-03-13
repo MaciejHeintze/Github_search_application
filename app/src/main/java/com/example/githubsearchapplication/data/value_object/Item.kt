@@ -4,6 +4,12 @@ package com.example.githubsearchapplication.data.value_object
 import com.google.gson.annotations.SerializedName
 
 data class Item(
+    val name: String,
+    @SerializedName("full_name")
+    val fullName: String,
+    val owner: Owner,
+    val description: String,
+    val private: Boolean,
     @SerializedName("archive_url")
     val archiveUrl: String,
     val archived: Boolean,
@@ -33,7 +39,6 @@ data class Item(
     val defaultBranch: String,
     @SerializedName("deployments_url")
     val deploymentsUrl: String,
-    val description: String,
     val disabled: Boolean,
     @SerializedName("downloads_url")
     val downloadsUrl: String,
@@ -45,8 +50,6 @@ data class Item(
     val forksCount: Int,
     @SerializedName("forks_url")
     val forksUrl: String,
-    @SerializedName("full_name")
-    val fullName: String,
     @SerializedName("git_commits_url")
     val gitCommitsUrl: String,
     @SerializedName("git_refs_url")
@@ -91,7 +94,6 @@ data class Item(
     val milestonesUrl: String,
     @SerializedName("mirror_url")
     val mirrorUrl: Any,
-    val name: String,
     @SerializedName("node_id")
     val nodeId: String,
     @SerializedName("notifications_url")
@@ -100,8 +102,6 @@ data class Item(
     val openIssues: Int,
     @SerializedName("open_issues_count")
     val openIssuesCount: Int,
-    val owner: Owner,
-    val `private`: Boolean,
     @SerializedName("pulls_url")
     val pullsUrl: String,
     @SerializedName("pushed_at")

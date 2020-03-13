@@ -7,6 +7,14 @@ data class Owner(
 
     @SerializedName("avatar_url")
     val avatarUrl: String,
+    val login: String,
+    val type: String,
+    @SerializedName("html_url")
+    val htmlUrl: String,
+
+
+
+
     @SerializedName("events_url")
     val eventsUrl: String,
     @SerializedName("followers_url")
@@ -17,10 +25,7 @@ data class Owner(
     val gistsUrl: String,
     @SerializedName("gravatar_id")
     val gravatarId: String,
-    @SerializedName("html_url")
-    val htmlUrl: String,
     val id: Int,
-    val login: String,
     @SerializedName("node_id")
     val nodeId: String,
     @SerializedName("organizations_url")
@@ -35,6 +40,5 @@ data class Owner(
     val starredUrl: String,
     @SerializedName("subscriptions_url")
     val subscriptionsUrl: String,
-    val type: String,
     val url: String
 )

@@ -2,6 +2,7 @@ package com.example.githubsearchapplication.repository_details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.example.githubsearchapplication.data.value_object.Item
 import com.example.githubsearchapplication.data.value_object.NetworkState
 import com.example.githubsearchapplication.data.value_object.RepositoryDetails
 import io.reactivex.disposables.CompositeDisposable
