@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubsearchapplication.R
-import com.example.githubsearchapplication.data.value_object.Item
+import com.example.githubsearchapplication.data.value_object.repositories.Item
 import kotlinx.android.synthetic.main.repository_item.view.*
 
 const val SEARCHED_KEY_WORD = "key_word"
@@ -50,7 +50,7 @@ class RepositoryAdapter (
 
         holder.itemView.setOnClickListener{
             val intent = Intent(context, SingleRepositoryDetails::class.java)
-            intent.putExtra(SEARCHED_KEY_WORD, data.name )
+            intent.putExtra(SEARCHED_KEY_WORD, data.id )
             startActivity(context,intent,null)
         }
     }

@@ -1,6 +1,5 @@
 package com.example.githubsearchapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -10,10 +9,9 @@ import androidx.recyclerview.widget.OrientationHelper
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
-import com.example.githubsearchapplication.data.value_object.Item
-import com.example.githubsearchapplication.data.value_object.RepositoryDetails
+import com.example.githubsearchapplication.data.value_object.repositories.Item
+import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
 import com.example.githubsearchapplication.repository_details.RepositoryAdapter
-import com.example.githubsearchapplication.repository_details.SingleRepositoryDetails
 import kotlinx.android.synthetic.main.activity_main.*
 
 const val GITHUB_URL = "https://api.github.com/search/repositories?q="

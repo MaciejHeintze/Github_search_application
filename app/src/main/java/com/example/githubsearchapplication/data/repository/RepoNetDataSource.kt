@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.githubsearchapplication.data.api.RepoDBInterface
-import com.example.githubsearchapplication.data.value_object.Item
 import com.example.githubsearchapplication.data.value_object.NetworkState
-import com.example.githubsearchapplication.data.value_object.RepositoryDetails
+import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
+import com.example.githubsearchapplication.data.value_object.repository_details.Repository
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
@@ -20,18 +20,18 @@ class RepoNetDataSource(
     val networkState: LiveData<NetworkState>
         get() = _networkState
 
-    private val _downloadedResponse =  MutableLiveData<RepositoryDetails>()
+    private val _downloadedResponse =  MutableLiveData<Repository>()
 
-    val downloadedResponse: LiveData<RepositoryDetails>
+    val downloadedResponse: LiveData<Repository>
         get() = _downloadedResponse
 
 
-    fun fetchRepoDetails(name: String) {
+    fun fetchRepoDetails(id: Int) {
         _networkState.postValue(NetworkState.LOADING)
 
         try {
             compositeDisposable.add(
-                apiService.getRepositoryByName(name)
+                apiService.getRepositoryByName(id)
                     .subscribeOn(Schedulers.io())
                     .subscribe(
                         {

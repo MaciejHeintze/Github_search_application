@@ -2,17 +2,17 @@ package com.example.githubsearchapplication.repository_details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubsearchapplication.data.value_object.Item
 import com.example.githubsearchapplication.data.value_object.NetworkState
-import com.example.githubsearchapplication.data.value_object.RepositoryDetails
+import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
+import com.example.githubsearchapplication.data.value_object.repository_details.Repository
 import io.reactivex.disposables.CompositeDisposable
 
-class RepositoryDetailsViewModel(private val repoRepository : RepositoryDetailsRepository, name: String)  : ViewModel() {
+class RepositoryDetailsViewModel(private val repoRepository : RepositoryDetailsRepository, id: Int)  : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    val  repoDetails : LiveData<RepositoryDetails> by lazy {
-        repoRepository.fetchRepoDetails(compositeDisposable, name)
+    val  repoDetails : LiveData<Repository> by lazy {
+        repoRepository.fetchRepoDetails(compositeDisposable, id)
     }
 
     val networkState : LiveData<NetworkState> by lazy {

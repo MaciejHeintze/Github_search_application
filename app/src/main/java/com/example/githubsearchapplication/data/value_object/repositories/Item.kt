@@ -1,9 +1,10 @@
-package com.example.githubsearchapplication.data.value_object
+package com.example.githubsearchapplication.data.value_object.repositories
 
 
 import com.google.gson.annotations.SerializedName
 
 data class Item(
+    val id: Int,
     val name: String,
     @SerializedName("full_name")
     val fullName: String,
@@ -73,7 +74,7 @@ data class Item(
     val hooksUrl: String,
     @SerializedName("html_url")
     val htmlUrl: String,
-    val id: Int,
+
     @SerializedName("issue_comment_url")
     val issueCommentUrl: String,
     @SerializedName("issue_events_url")
