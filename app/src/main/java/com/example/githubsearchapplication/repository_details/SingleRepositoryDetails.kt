@@ -28,6 +28,11 @@ class SingleRepositoryDetails : AppCompatActivity() {
         val apiService : RepoDBInterface = RepoClient.getClient()
         repositoryDetailsRepository = RepositoryDetailsRepository(apiService)
 
+        val actionbar = supportActionBar
+        actionbar!!.title = "Repository details"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
         val name = "Github_search_application"
 
         viewModel = getViewModel(name)
@@ -67,5 +72,10 @@ class SingleRepositoryDetails : AppCompatActivity() {
         access_text_view_id?.text = "Access: " + it.items.get(index = 4).private.toString()
         repo_type_id?.text = "Type: " + it.items.get(index = 2).owner.type
         repo_html_address_id?.text = "Web address: " + it.items.get(index = 3).owner.htmlUrl
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
