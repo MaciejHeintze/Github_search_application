@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Connection Problem!!"
+            android:text="@string/connection_problem_text"
             android:visibility="gone"/>
 
         <ScrollView
@@ -34,68 +34,94 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/linearLayout">
 
-
                 <ImageView
-                    android:id="@+id/iv_movie_poster"
+                    android:id="@+id/repo_icon_image_view_id"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="@dimen/activity_repository_details_icon_height"
                     android:layout_gravity="center"
-                    android:layout_margin="12dp"
+                    android:layout_margin="@dimen/activity_repository_details_icon_margin"
                     android:scaleType="matrix"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_margin="8dp">
+                    android:layout_margin="@dimen/activity_repository_details_values_margin">
 
                     <TextView
-                        android:id="@+id/repo_name_id"
+                        android:id="@+id/repo_name_text_view_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="repo name"
                         android:textStyle="bold"
-                        android:textSize="18sp"/>
+                        android:textSize="@dimen/activity_repository_details_repo_name_text_size"/>
 
                     <TextView
-                        android:id="@+id/user_name_id"
+                        android:id="@+id/user_name_text_view_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="user"
-                        android:textSize="14sp"
-                        android:textStyle="bold"/>
+                        android:textSize="@dimen/activity_repository_details_user_name_text_size"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/activity_repository_details_user_name_top_margin"/>
 
                     <TextView
-                        android:id="@+id/repo_description_id"
+                        android:id="@+id/repo_description_text_view_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Repo Info"
-                        android:layout_marginTop="15dp"
-                        android:textSize="14sp"/>
+                        android:layout_marginTop="@dimen/activity_repository_details_description_top_margin"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"/>
+
+                    <TextView
+                        android:id="@+id/language_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"/>
+
+                    <TextView
+                        android:id="@+id/repo_type_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"/>
+
+                    <TextView
+                        android:id="@+id/repo_html_address_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"/>
+
+                    <TextView
+                        android:id="@+id/created_at_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"/>
+
+                    <TextView
+                        android:id="@+id/updated_at_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"/>
+
+                    <TextView
+                        android:id="@+id/subscribers_text_view_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"/>
+
                     <TextView
                         android:id="@+id/access_text_view_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:textSize="14dp"
-                        android:text="Access: "/>
-                    <TextView
-                        android:id="@+id/repo_type_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14dp"
-                        android:layout_marginTop="12dp"
-                        android:text="Type:"/>
-                    <TextView
-                        android:id="@+id/repo_html_address_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14dp"
-                        android:layout_marginTop="20dp"/>
+                        android:layout_marginTop="@dimen/activity_repository_details_values_top_margin"
+                        android:textSize="@dimen/activity_repository_details_values_text_size"/>
 
                 </LinearLayout>
             </LinearLayout>

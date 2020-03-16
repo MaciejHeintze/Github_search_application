@@ -30,7 +30,8 @@
             android:layout_marginTop="2dp"
             android:layout_marginStart="4dp"
             android:text="Android dev"
-            android:textSize="12sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:maxLines="1"
             android:ellipsize="end"/>
 
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginBottom="4dp"
-            android:text="Maciek"
+            android:textStyle="bold"
             android:maxLength="4"
             android:textSize="12sp"/>
     </LinearLayout>

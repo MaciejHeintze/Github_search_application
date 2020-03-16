@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_main_search_user_edit_text_width">280dp</dimen>
+    <dimen name="activity_main_search_user_edit_text_margin">6dp</dimen>
+    <dimen name="activity_main_recycler_view_layout_margin_top">70dp</dimen>
+    <dimen name="activity_main_recycler_view_margin">4dp</dimen>
+
+    <dimen name="activity_repository_details_icon_height">300dp</dimen>
+    <dimen name="activity_repository_details_icon_margin">12dp</dimen>
+    <dimen name="activity_repository_details_values_margin">8dp</dimen>
+    <dimen name="activity_repository_details_repo_name_text_size">18sp</dimen>
+    <dimen name="activity_repository_details_user_name_text_size">16sp</dimen>
+    <dimen name="activity_repository_details_user_name_top_margin">6dp</dimen>
+    <dimen name="activity_repository_details_description_top_margin">16dp</dimen>
+    <dimen name="activity_repository_details_values_text_size">14sp</dimen>
+    <dimen name="activity_repository_details_values_top_margin">10dp</dimen>
+</resources>

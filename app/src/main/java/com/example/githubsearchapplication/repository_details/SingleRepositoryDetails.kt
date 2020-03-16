@@ -60,18 +60,22 @@ class SingleRepositoryDetails : AppCompatActivity() {
 
     fun bindUI(it: Repository){
 
-        repo_name_id?.text = "Repository name: " + it.name
-        user_name_id?.text = "User name: " + it.owner.login
+        repo_name_text_view_id?.text = "Repository name: " + it.name
+        user_name_text_view_id?.text = "User name: " + it.owner.login
 
         val repoIcon = it.owner.avatarUrl
         Glide.with(this)
             .load(repoIcon)
-            .into(iv_movie_poster)
+            .into(repo_icon_image_view_id)
 
-        repo_description_id?.text = "Description: "+ it.description
+        repo_description_text_view_id?.text = "Description: "+ it.description
+        language_text_view_id?.text = "Language: " + it.language
         access_text_view_id?.text = "Access: " + it.private
-        repo_type_id?.text = "Type: " + it.owner.type
-        repo_html_address_id?.text = "Web address: " + it.owner.htmlUrl
+        repo_type_text_view_id?.text = "Type: " + it.owner.type
+        repo_html_address_text_view_id?.text = "Web address: " + it.owner.htmlUrl
+        created_at_text_view_id?.text = "Created at: " + it.createdAt
+        updated_at_text_view_id?.text = "Updated at: " + it.updatedAt
+        subscribers_text_view_id?.text = "Subscribers count: " + it.subscribersCount
     }
 
     override fun onSupportNavigateUp(): Boolean {
