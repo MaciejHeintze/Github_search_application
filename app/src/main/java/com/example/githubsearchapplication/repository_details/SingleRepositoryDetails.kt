@@ -1,5 +1,6 @@
 package com.example.githubsearchapplication.repository_details
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,33 +21,15 @@ class SingleRepositoryDetails : AppCompatActivity() {
 
     private lateinit var viewModel: RepositoryDetailsViewModel
     private lateinit var repositoryDetailsRepository: RepositoryDetailsRepository
+    private var id = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repository_details)
 
-        val apiService : RepoDBInterface = RepoClient.getClient()
-        repositoryDetailsRepository = RepositoryDetailsRepository(apiService)
-
-        val actionbar = supportActionBar
-        actionbar!!.title = "Repository details"
-        actionbar.setDisplayHomeAsUpEnabled(true)
-        actionbar.setDisplayHomeAsUpEnabled(true)
-
-        val id = intent.getIntExtra(SEARCHED_KEY_WORD, 0)
-
-        viewModel = getViewModel(id)
-
-        viewModel.repoDetails.observe(this, Observer {
-            bindUI(it)
-        })
-
-        viewModel.networkState.observe(this, Observer {
-            progress_bar_id.visibility = if (it == NetworkState.LOADING) View.VISIBLE else View.GONE
-            error_text_view_id.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
-
-        })
-
+        setupActionBar()
+        id = intent.getIntExtra(SEARCHED_KEY_WORD, 0)
+        initData()
     }
 
     private fun getViewModel(id: Int): RepositoryDetailsViewModel {
@@ -58,6 +41,7 @@ class SingleRepositoryDetails : AppCompatActivity() {
         })[RepositoryDetailsViewModel::class.java]
     }
 
+    @SuppressLint("SetTextI18n")
     fun bindUI(it: Repository){
 
         repo_name_text_view_id?.text = "Repository name: " + it.name
@@ -81,5 +65,28 @@ class SingleRepositoryDetails : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun setupActionBar(){
+        val actionbar = supportActionBar
+        actionbar!!.title = "Repository details"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun initData(){
+
+        val apiService : RepoDBInterface = RepoClient.getClient()
+        repositoryDetailsRepository = RepositoryDetailsRepository(apiService)
+        viewModel = getViewModel(id)
+
+        viewModel.repoDetails.observe(this, Observer {
+            bindUI(it)
+        })
+        viewModel.networkState.observe(this, Observer {
+            progress_bar_id.visibility = if (it == NetworkState.LOADING) View.VISIBLE else View.GONE
+            error_text_view_id.visibility = if (it == NetworkState.ERROR) View.VISIBLE else View.GONE
+
+        })
     }
 }

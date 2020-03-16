@@ -19,7 +19,6 @@ class RepositoryAdapter (
     private val dataList: MutableList<Item>
 ) : RecyclerView.Adapter<GithubHolder>() {
 
-
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubHolder {
@@ -31,18 +30,17 @@ class RepositoryAdapter (
     }
     override fun getItemCount()= dataList.size
 
-
     override fun onBindViewHolder(holder: GithubHolder, position: Int) {
+
         val data = dataList[position]
 
         val repoName = holder.itemView.card_view_repo_name_id
         val userName = holder.itemView.card_view_user_name_id
         val repoIcon = holder.itemView.card_view_repo_icon_id
+        val repoIconView = data.owner.avatarUrl
 
         repoName.text = data.name
         userName.text = data.owner.login
-
-        val repoIconView = data.owner.avatarUrl
 
         Glide.with(context)
             .load(repoIconView)
@@ -54,14 +52,10 @@ class RepositoryAdapter (
             startActivity(context,intent,null)
         }
     }
-
-
-
-
 }
 
 class GithubHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-private fun AdapterView.OnItemClickListener.onItemClick(items: Item) {
-    onItemClick(items)
+    private fun AdapterView.OnItemClickListener.onItemClick(items: Item) {
+        onItemClick(items)
 }

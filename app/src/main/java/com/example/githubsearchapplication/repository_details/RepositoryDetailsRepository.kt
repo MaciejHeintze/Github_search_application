@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.example.githubsearchapplication.data.api.RepoDBInterface
 import com.example.githubsearchapplication.data.repository.RepoNetDataSource
 import com.example.githubsearchapplication.data.value_object.NetworkState
-import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
 import com.example.githubsearchapplication.data.value_object.repository_details.Repository
 import io.reactivex.disposables.CompositeDisposable
 
@@ -22,12 +21,9 @@ class RepositoryDetailsRepository(private val apiService : RepoDBInterface) {
         repoNetDataSource.fetchRepoDetails(id)
 
         return repoNetDataSource.downloadedResponse
-
     }
 
     fun getRepoDetailsNetState(): LiveData<NetworkState> {
         return repoNetDataSource.networkState
     }
-
-
 }

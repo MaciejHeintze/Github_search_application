@@ -3,7 +3,6 @@ package com.example.githubsearchapplication.repository_details
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.githubsearchapplication.data.value_object.NetworkState
-import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
 import com.example.githubsearchapplication.data.value_object.repository_details.Repository
 import io.reactivex.disposables.CompositeDisposable
 
@@ -23,4 +22,4 @@ class RepositoryDetailsViewModel(private val repoRepository : RepositoryDetailsR
         super.onCleared()
         compositeDisposable.dispose()
     }
-    }
+}

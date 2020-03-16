@@ -14,4 +14,12 @@
     <dimen name="activity_repository_details_description_top_margin">16dp</dimen>
     <dimen name="activity_repository_details_values_text_size">14sp</dimen>
     <dimen name="activity_repository_details_values_top_margin">10dp</dimen>
+
+    <dimen name="repository_item_card_view_margin">6dp</dimen>
+    <dimen name="repository_item_image_height">180dp</dimen>
+    <dimen name="repository_item_repository_name_top_margin">2dp</dimen>
+    <dimen name="repository_item_repository_name_start_margin">4dp</dimen>
+    <dimen name="repository_item_repository_name_text_size">16sp</dimen>
+    <dimen name="repository_item_user_name_margins">4dp</dimen>
+    <dimen name="repository_item_user_name_text_size">12sp</dimen>
 </resources>

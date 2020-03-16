@@ -1,6 +1,5 @@
 package com.example.githubsearchapplication.data.value_object.repository_details
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Repository(

@@ -2,6 +2,7 @@ package com.example.githubsearchapplication
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -48,9 +49,11 @@ class MainActivity : AppCompatActivity() {
 
         inputRepositoryName = search_user_edit_text.text.toString()
 
-        if (inputRepositoryName.isNullOrEmpty()) {
+        if (inputRepositoryName.isEmpty()) {
             Toast.makeText(this, "Please provide repository name", Toast.LENGTH_SHORT).show()
         } else {
+            recycler_view_progress_bar_id.visibility = View.VISIBLE
+
             AndroidNetworking.initialize(this)
             AndroidNetworking.get("${GITHUB_URL}${inputRepositoryName}")
                 .build()
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                     override fun onResponse(response: RepositoryDetails) {
                         dataList.addAll(response.items)
                         repositoryAdapter.notifyDataSetChanged()
+                        recycler_view_progress_bar_id.visibility = View.INVISIBLE
                     }
 
                     override fun onError(anError: ANError?) {
@@ -67,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                             "Something went wrong:${anError}",
                             Toast.LENGTH_LONG
                         ).show()
+                        recycler_view_progress_bar_id.visibility = View.INVISIBLE
                     }
                 })
         }

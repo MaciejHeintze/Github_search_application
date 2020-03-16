@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?selectableItemBackground"
-    android:layout_margin="6dp"
+    android:layout_margin="@dimen/repository_item_card_view_margin"
     android:focusable="true"
     android:clickable="true">
 
@@ -17,20 +17,17 @@
         <ImageView
             android:id="@+id/card_view_repo_icon_id"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="@dimen/repository_item_image_height"
             android:scaleType="centerCrop"
-            android:layout_gravity="center">
-
-        </ImageView>
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/card_view_repo_name_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="4dp"
-            android:text="Android dev"
-            android:textSize="16sp"
+            android:layout_marginTop="@dimen/repository_item_repository_name_top_margin"
+            android:layout_marginStart="@dimen/repository_item_repository_name_start_margin"
+            android:textSize="@dimen/repository_item_repository_name_text_size"
             android:textStyle="bold"
             android:maxLines="1"
             android:ellipsize="end"/>
@@ -39,11 +36,10 @@
             android:id="@+id/card_view_user_name_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="@dimen/repository_item_user_name_margins"
+            android:layout_marginBottom="@dimen/repository_item_user_name_margins"
             android:textStyle="bold"
             android:maxLength="4"
-            android:textSize="12sp"/>
+            android:textSize="@dimen/repository_item_user_name_text_size"/>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

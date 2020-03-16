@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.githubsearchapplication.data.api.RepoDBInterface
 import com.example.githubsearchapplication.data.value_object.NetworkState
-import com.example.githubsearchapplication.data.value_object.repositories.RepositoryDetails
 import com.example.githubsearchapplication.data.value_object.repository_details.Repository
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
